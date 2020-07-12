@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+{% load markdown_extras %}
+{% load static %}
+{% block title %}
+{% if error == true %} Page Not Found
+{% else %} Page Alredy Exists
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div style="background-color: #FFFFCC;">
+    <h3>{{ text }}</h3>
+    <h6>
+        <ul>
+            <li>Request Method: {{ method }}</li>
+            <li>Request URL: http://127.0.0.1:8000/{{title}}</li>
+        </ul>
+    </h6>
+</div>
+{% endblock %}

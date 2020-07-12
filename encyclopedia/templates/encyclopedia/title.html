@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+{% load markdown_extras %}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block body %}
+<div>
+    <div class="row" style="float: right; margin-right: 20px;">
+        <a href="edit/{{ title }}">
+            <h4>Edit {{ title }} Page</h4>
+        </a>
+    </div>
+    <div>
+        {{ text | markdown | safe}}
+    </div>
+</div>
+{% endblock %}
